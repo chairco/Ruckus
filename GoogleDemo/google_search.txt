@@ -1,0 +1,37 @@
+*** Settings ***
+Documentation     A test suite with a single for Google search.
+...
+...               This test is a example in Google Serach
+Library           Selenium2Library
+Test Teardown     Close Browser
+
+*** Variables ***
+${SERVER}         www.google.com.tw
+${BROWSER}        Firefox
+${DELAY}          0
+${LOGIN URL}      http://${SERVER}/
+${SEARCH_TEXT}    Ruckus Wireless
+${BUTTON}         Google 搜尋
+
+*** Test Cases ***
+Search Ruckus Wireless
+    Open Browser To Login Page
+    Input SearchText
+    Submit Credentials
+    [Teardown]    Close Browser
+
+*** Keywords ***
+Open Browser To Login Page
+    Open Browser    ${LOGIN URL}    ${BROWSER}
+    Maximize Browser Window
+    Set Selenium Speed    ${DELAY}
+    Login Page Should Be Open
+
+Login Page Should Be Open
+    Title Should Be    Google
+
+Input SearchText
+    Input Text    lst-ib    ${SEARCH_TEXT}
+
+Submit Credentials
+    Click Button    ${BUTTON}
