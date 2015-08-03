@@ -1,7 +1,0 @@
-flask
-Selenium
-requests
-robotframework
-robotframework-selenium2library
-robotframework-requests
-robotframework-httplibrary
