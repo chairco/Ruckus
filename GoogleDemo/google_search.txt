@@ -3,31 +3,36 @@ Documentation     A test suite with a single for Google search.
 ...
 ...               This test is a example in Google Serach
 Library           Selenium2Library
+Library           Collections
+Library           requests
+Library           RequestsLibrary
 Test Teardown     Close Browser
 
 *** Variables ***
 ${SERVER}         www.google.com.tw
 ${BROWSER}        Firefox
 ${DELAY}          0
-${LOGIN URL}      http://${SERVER}/
+${URL}      http://${SERVER}/
 ${SEARCH_TEXT}    Ruckus Wireless
 ${BUTTON}         Google 搜尋
+${CONTENT}        center_col
 
 *** Test Cases ***
 Search Ruckus Wireless
-    Open Browser To Login Page
+    Open Browser To Page
     Input SearchText
     Submit Credentials
+    Sample Result
     [Teardown]    Close Browser
 
 *** Keywords ***
-Open Browser To Login Page
-    Open Browser    ${LOGIN URL}    ${BROWSER}
+Open Browser To Page
+    Open Browser    ${URL}    ${BROWSER}
     Maximize Browser Window
     Set Selenium Speed    ${DELAY}
-    Login Page Should Be Open
+    Page Should Be Open
 
-Login Page Should Be Open
+Page Should Be Open
     Title Should Be    Google
 
 Input SearchText
@@ -35,3 +40,6 @@ Input SearchText
 
 Submit Credentials
     Click Button    ${BUTTON}
+
+Sample Result
+    ${xpa-count}    Get Matching Xpath Count    //div[@class='srg']/li[@class='g']
