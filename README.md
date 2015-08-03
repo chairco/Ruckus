@@ -18,18 +18,19 @@ Implement a REST server ahd be the endpoint to start the Google Search by Robotf
 This application package into Docker's container
 
 # Example
-##First download this image from 
-https://registry.hub.docker.com/u/chaircos/rest/
+First download this image from 
+https://registry.hub.docker.com/u/chaircos/rest/ </br>
 
-##Second deploy and run the image on the container
+Second deploy and run the image on the container </br>
 MAX OS X sample: </br>
-###2.1 creareVM: boot2docker init
-###2.2 startup: boot2docker start
-###2.3 run image: run -d -p 80:5000 --name rests rest
+#####2.1 creareVM: boot2docker init
+#####2.2 startup: boot2docker start
+#####2.3 run image: run -d -p 80:5000 --name rests rest
 
 # How to Develop
 git clone https://github.com/chairco/RuckusTEST.git
 the tree will like below:</br>
+
 ├── Dockerfile </br>
 ├── GoogleDemo </br>
 │   ├── google_search.txt </br>
@@ -41,13 +42,13 @@ the tree will like below:</br>
 ├── .gitignore </br>
 └── requirements.txt </br>
 
-###1. mockflask.py
+#####3.1. mockflask.py
    REST Server, by flask web framework
-###2. google_search.txt
+#####3.2. google_search.txt
    robot script
-###3. Dockfile
+#####3.3. Dockfile
    build the image need
-###4. requirements
+#####3.4. requirements
    python packages
 
 
