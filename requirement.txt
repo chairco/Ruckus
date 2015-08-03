@@ -1,4 +1,7 @@
+flask
 Selenium
+requests
 robotframework
 robotframework-selenium2library
-bottle
+robotframework-requests
+robotframework-httplibrary

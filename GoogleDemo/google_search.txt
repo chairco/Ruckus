@@ -42,4 +42,6 @@ Submit Credentials
     Click Button    ${BUTTON}
 
 Sample Result
-    ${xpa-count}    Get Matching Xpath Count    //div[@class='srg']/li[@class='g']
+    ${xpa-count}=  Get Matching Xpath Count    //div[@class='srg']/li[@class='g']
+    ${var}=   Set Variable    id=resultStats
+    Log    ${var}    
