@@ -1,8 +1,10 @@
 # -*- coding: utf-8 -*-
 import logging
+import os
 from flask import Flask, jsonify
 from robot import run as robotrun
 from robot.libraries.BuiltIn import BuiltIn
+from pyvirtualdisplay import Display
 
 logger= logging.getLogger(__name__)
 builtins = BuiltIn()
@@ -41,7 +43,11 @@ def get_tasks():
 
 @app.route('/todo/api/v1.0/robot', methods=['GET'])
 def run_robot():
+    if os.name != 'posix':   
+        display = Display(visible=0, size=(1024, 768))
+        display.start()
     ret = robotrun('GoogleDemo/google_search.txt', variable=['BROWSER:Chrome'])
+    if os.name != 'posix': display.stop()
     if ret == 0: 
         return jsonify({'retpass': retpass})
     else:

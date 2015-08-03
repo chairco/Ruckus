@@ -1,0 +1,8 @@
+flask
+selenium
+requests
+pyvirtualdisplay
+robotframework
+robotframework-selenium2library
+robotframework-requests
+robotframework-httplibrary

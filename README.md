@@ -11,3 +11,43 @@ http://ratpack.io or https://grails.org for RESTful API implementation, or any f
 4. Use Gradle & Docker to package the application to container.
 
 5. Send me the Docker container and prepare a readme file to teach me how to use.
+
+# Introduction
+This is the sample for Ruckus's Exercise.
+Implement a REST server ahd be the endpoint to start the Google Search by Robotframework.
+This application package into Docker's container
+
+# Example
+First download this image from 
+https://registry.hub.docker.com/u/chaircos/rest/
+
+Second deploy and run the image on the container
+MAX OS X sample:
+2.1 creareVM: boot2docker init
+2.2 startup: boot2docker start
+2.3 run image: run -d -p 80:5000 --name rests rest
+
+# How to Develop
+git clone https://github.com/chairco/RuckusTEST.git
+the tree will like below:
+├── Dockerfile
+├── GoogleDemo
+│   ├── google_search.txt
+│   ├── log.html
+│   ├── output.xml
+│   ├── report.html
+├── README.md
+├── mockflask.py
+├── .gitignore
+└── requirements.txt
+
+1. mockflask.py
+   REST Server, by flask web framework
+2. google_search.txt
+   robot script
+3. Dockfile
+   build the image need
+4. requirements
+   python packages
+
+
