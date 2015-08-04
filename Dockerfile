@@ -9,6 +9,7 @@ RUN apt-get update
 RUN apt-get install -y xvfb
 # RUN apt-get install -y firefox
 RUN apt-get install -y x11vnc
+RUN apt-get install -y chromium-browser
 #RUN mkdir ~/.vnc
 # Setup a password
 #RUN x11vnc -storepasswd 1234 ~/.vnc/passwd
@@ -19,10 +20,16 @@ FROM python:2.7
 ADD . .
 
 # Install Chrome
+RUN mv -f chromedriver /usr/local/share/chromedriver
+RUN ln -s -f /usr/local/share/chromedriver /usr/local/bin/chromedriver
+RUN ln -s -f /usr/local/share/chromedriver /usr/bin/chromedriver
+
+# Install Chrome
 #RUN wget http://chromedriver.storage.googleapis.com/2.16/chromedriver_linux64.zip chromedriver_linux64.zip
 #RUN unzip chromedriver_linux64.zip
-RUN mv chromedriver /usr/local/bin/
+#RUN mv chromedriver /usr/local/bin/
 
+# Install python package
 RUN pip install -r requirements.txt
 
 # Install firefox version 30
@@ -31,7 +38,5 @@ RUN pip install -r requirements.txt
 #RUN mv firefox /opt/firefox30.0
 #RUN ln -sf /opt/firefox30.0/firefox /usr/bin/firefox
 
-
-
-ENV DISPLAY :0
+#ENV DISPLAY :0
 CMD python mockflask.py 
