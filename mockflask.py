@@ -45,7 +45,7 @@ def get_tasks():
 def run_robot():
     display = Display(visible=0, size=(1024, 768))
     display.start()
-    ret = robotrun('GoogleDemo/google_search.txt', variable=['BROWSER:Chrome'])
+    ret = robotrun('GoogleDemo/google_search.txt', variable=['BROWSER:firefox'])
     display.stop()
     if ret == 0: 
         return jsonify({'retpass': retpass})
