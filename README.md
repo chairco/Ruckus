@@ -21,19 +21,24 @@ This application package into Docker's container
 REST server default address is 0.0.0.0:5000
 
 After deploy can use 2 command to check the server and REST server status: </br>
-1.1. http://docker_ip:port/ 
-1.2. http://docker_ip:port/todo/api/v1.0/tasks
+
++ http://docker_ip:port/
+
++ http://docker_ip:port/todo/api/v1.0/tasks
+
 
 # Example
 First download this image from 
 https://registry.hub.docker.com/u/chaircos/rest/ </br>
 
 Second deploy and run the image on the container </br>
-MAX OS X sample: </br>
+MAX OS X sample:
+
 ##### 2.1 creareVM: boot2docker init
 ##### 2.2 startup: boot2docker start
 ##### 2.3 run image: run -d -p 80:5000 --name rests rest
 ##### 2.4 and execute curl command at client like curl -i http://docker_ip:80/todo/api/v1.0/robot
+
 
 # How to Develop
 git clone https://github.com/chairco/RuckusTEST.git
