@@ -45,16 +45,16 @@ git clone https://github.com/chairco/RuckusTEST.git
 the tree will like below:
 
 ```
-├── Dockerfile </br>
-├── GoogleDemo </br>
-│   ├── google_search.txt </br>
-│   ├── log.html </br>
-│   ├── output.xml </br>
-│   ├── report.html </br>
-├── README.md </br>
-├── mockflask.py </br>
-├── .gitignore </br>
-└── requirements.txt </br>
+├── Dockerfile
+├── GoogleDemo
+│   ├── google_search.txt
+│   ├── log.html
+│   ├── output.xml
+│   ├── report.html
+├── README.md
+├── mockflask.py
+├── .gitignore
+└── requirements.txt
 ```
 
 ##### 3.1. mockflask.py
