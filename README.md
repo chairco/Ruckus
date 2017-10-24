@@ -42,8 +42,9 @@ MAX OS X sample:
 
 # How to Develop
 git clone https://github.com/chairco/RuckusTEST.git
-the tree will like below:</br>
+the tree will like below:
 
+```
 ├── Dockerfile </br>
 ├── GoogleDemo </br>
 │   ├── google_search.txt </br>
@@ -54,6 +55,7 @@ the tree will like below:</br>
 ├── mockflask.py </br>
 ├── .gitignore </br>
 └── requirements.txt </br>
+```
 
 ##### 3.1. mockflask.py
    REST Server, by flask web framework
